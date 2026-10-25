@@ -1,0 +1,51 @@
+{
+  "num": "04",
+  "area": "Marketing",
+  "product": "AI Customer Segmentation",
+  "title": "Starbucks Rewards Segmenter",
+  "company": "Starbucks",
+  "why": "Starbucks Rewards records what members buy, when, where and through which channel. That is far richer than age and income, so segments can be built on behaviour and each one gets its own offer.",
+  "problem": "A company treats its customers using broad demographic segments, resulting in inefficient campaigns. Develop an LLM-powered customer intelligence system that discovers meaningful behavioral segments from transaction and interaction data and recommends differentiated marketing strategies.",
+  "data_note": "2,500 Rewards members with 6 months of transactions and app activity (sample data).",
+  "steps": [
+    {
+      "step": "Collect transactions and app data",
+      "detail": "Visits, spend, time of day, mobile orders, food, offers"
+    },
+    {
+      "step": "Build RFM + behaviour features",
+      "detail": "Recency, frequency, monetary plus 5 habit features"
+    },
+    {
+      "step": "Scale and reduce",
+      "detail": "Standardise, then PCA to 2 dimensions for the map"
+    },
+    {
+      "step": "Cluster with K-means",
+      "detail": "K-means++ for k = 3 to 7, pick by silhouette"
+    },
+    {
+      "step": "Validate segments",
+      "detail": "Check that segments differ in value and offer response"
+    },
+    {
+      "step": "Profile and name",
+      "detail": "Rule-based names; AI analyst can rename"
+    },
+    {
+      "step": "Strategy per segment",
+      "detail": "Offer, channel, message and timing"
+    },
+    {
+      "step": "Track migration",
+      "detail": "Compare old demographic groups with new segments"
+    }
+  ],
+  "questions": [
+    "Describe each segment like a person",
+    "Which segment is most valuable to grow?",
+    "Suggest a campaign for the weakest segment",
+    "Why are demographic segments worse here?"
+  ],
+  "author": "K Mohan Kumar"
+}

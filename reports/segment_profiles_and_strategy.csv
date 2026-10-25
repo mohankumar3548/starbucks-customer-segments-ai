@@ -1,0 +1,6 @@
+name,members,share_of_members,share_of_spend,visits_per_month,avg_ticket,days_since_visit,morning_share,mobile_order_share,food_attach,offer_redemption,play,offer,channel,timing
+Weekday morning regulars,689,0.276,0.462,17.908,6.176,2.943,0.821,0.747,0.2,0.354,Protect and upsell,Breakfast sandwich add-on at member price,App home screen,6 to 9 am weekdays
+Weekend treat and food,460,0.184,0.256,8.002,11.461,5.989,0.349,0.253,0.654,0.303,Premium and food,Seasonal menu and pastry pairings,Social + in-store,Friday to Sunday
+Mobile order and go,355,0.142,0.208,11.198,8.629,3.823,0.253,0.895,0.404,0.161,Convenience,Order-ahead perks and new-drink previews,Push notifications,Lunch window
+Deal seekers,549,0.22,0.058,2.495,7.013,28.002,0.449,0.153,0.254,0.703,Habit builder,Visit 3 times this week for 100 bonus stars,App offers,Monday mornings
+Lapsed members,447,0.179,0.016,1.014,5.92,59.678,0.5,0.205,0.149,0.11,Win-back,Bonus stars on next visit within 14 days,Email + app push,Day 30 and 45 after last visit

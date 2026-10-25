@@ -1,0 +1,210 @@
+{
+  "title": "Starbucks Rewards Segmenter",
+  "company": "Starbucks",
+  "kpis": [
+    {
+      "label": "Members analysed",
+      "value": "2,500",
+      "note": "6 months of activity"
+    },
+    {
+      "label": "Segments found",
+      "value": "5",
+      "note": "Silhouette 0.51"
+    },
+    {
+      "label": "Top segment value",
+      "value": "46%",
+      "note": "Weekday morning regulars, 28% of members"
+    },
+    {
+      "label": "Spend variation cut",
+      "value": "60%",
+      "note": "Less spread inside segments than inside age bands"
+    }
+  ],
+  "algorithm": [
+    {
+      "step": "Collect transactions and app data",
+      "output": "2,500 members, $991K spend in 6 months"
+    },
+    {
+      "step": "Build RFM + behaviour features",
+      "output": "9 features per member"
+    },
+    {
+      "step": "Scale and reduce",
+      "output": "PCA keeps 73% of variance in 2D"
+    },
+    {
+      "step": "Cluster with K-means",
+      "output": "Silhouette: k3 0.46, k4 0.48, k5 0.51, k6 0.41, k7 0.32"
+    },
+    {
+      "step": "Validate segments",
+      "output": "Chosen k = 5; spend per member ranges $36 to $665"
+    },
+    {
+      "step": "Profile and name",
+      "output": "Weekday morning regulars | Weekend treat and food | Mobile order and go | Deal seekers | Lapsed members"
+    },
+    {
+      "step": "Strategy per segment",
+      "output": "5 distinct plays"
+    },
+    {
+      "step": "Track migration",
+      "output": "Spend spread inside groups: age 77% vs segments 30%"
+    }
+  ],
+  "tables": {
+    "Segment profiles and strategy": [
+      {
+        "name": "Weekday morning regulars",
+        "members": 689,
+        "share_of_members": 0.276,
+        "share_of_spend": 0.462,
+        "visits_per_month": 17.908,
+        "avg_ticket": 6.176,
+        "days_since_visit": 2.943,
+        "morning_share": 0.821,
+        "mobile_order_share": 0.747,
+        "food_attach": 0.2,
+        "offer_redemption": 0.354,
+        "play": "Protect and upsell",
+        "offer": "Breakfast sandwich add-on at member price",
+        "channel": "App home screen",
+        "timing": "6 to 9 am weekdays"
+      },
+      {
+        "name": "Weekend treat and food",
+        "members": 460,
+        "share_of_members": 0.184,
+        "share_of_spend": 0.256,
+        "visits_per_month": 8.002,
+        "avg_ticket": 11.461,
+        "days_since_visit": 5.989,
+        "morning_share": 0.349,
+        "mobile_order_share": 0.253,
+        "food_attach": 0.654,
+        "offer_redemption": 0.303,
+        "play": "Premium and food",
+        "offer": "Seasonal menu and pastry pairings",
+        "channel": "Social + in-store",
+        "timing": "Friday to Sunday"
+      },
+      {
+        "name": "Mobile order and go",
+        "members": 355,
+        "share_of_members": 0.142,
+        "share_of_spend": 0.208,
+        "visits_per_month": 11.198,
+        "avg_ticket": 8.629,
+        "days_since_visit": 3.823,
+        "morning_share": 0.253,
+        "mobile_order_share": 0.895,
+        "food_attach": 0.404,
+        "offer_redemption": 0.161,
+        "play": "Convenience",
+        "offer": "Order-ahead perks and new-drink previews",
+        "channel": "Push notifications",
+        "timing": "Lunch window"
+      },
+      {
+        "name": "Deal seekers",
+        "members": 549,
+        "share_of_members": 0.22,
+        "share_of_spend": 0.058,
+        "visits_per_month": 2.495,
+        "avg_ticket": 7.013,
+        "days_since_visit": 28.002,
+        "morning_share": 0.449,
+        "mobile_order_share": 0.153,
+        "food_attach": 0.254,
+        "offer_redemption": 0.703,
+        "play": "Habit builder",
+        "offer": "Visit 3 times this week for 100 bonus stars",
+        "channel": "App offers",
+        "timing": "Monday mornings"
+      },
+      {
+        "name": "Lapsed members",
+        "members": 447,
+        "share_of_members": 0.179,
+        "share_of_spend": 0.016,
+        "visits_per_month": 1.014,
+        "avg_ticket": 5.92,
+        "days_since_visit": 59.678,
+        "morning_share": 0.5,
+        "mobile_order_share": 0.205,
+        "food_attach": 0.149,
+        "offer_redemption": 0.11,
+        "play": "Win-back",
+        "offer": "Bonus stars on next visit within 14 days",
+        "channel": "Email + app push",
+        "timing": "Day 30 and 45 after last visit"
+      }
+    ],
+    "Why age bands fall short": [
+      {
+        "age_band": "18-24",
+        "Deal seekers": 0.252,
+        "Lapsed members": 0.182,
+        "Mobile order and go": 0.152,
+        "Weekday morning regulars": 0.263,
+        "Weekend treat and food": 0.152
+      },
+      {
+        "age_band": "25-34",
+        "Deal seekers": 0.223,
+        "Lapsed members": 0.172,
+        "Mobile order and go": 0.125,
+        "Weekday morning regulars": 0.285,
+        "Weekend treat and food": 0.196
+      },
+      {
+        "age_band": "35-44",
+        "Deal seekers": 0.204,
+        "Lapsed members": 0.178,
+        "Mobile order and go": 0.146,
+        "Weekday morning regulars": 0.276,
+        "Weekend treat and food": 0.196
+      },
+      {
+        "age_band": "45+",
+        "Deal seekers": 0.201,
+        "Lapsed members": 0.183,
+        "Mobile order and go": 0.144,
+        "Weekday morning regulars": 0.28,
+        "Weekend treat and food": 0.193
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "title": "Weekday morning regulars: Protect and upsell",
+      "body": "689 members, 17.9 visits a month at $6.18. Send 'Breakfast sandwich add-on at member price' via app home screen (6 to 9 am weekdays).",
+      "impact": "46% of spend"
+    },
+    {
+      "title": "Weekend treat and food: Premium and food",
+      "body": "460 members, 8.0 visits a month at $11.46. Send 'Seasonal menu and pastry pairings' via social + in-store (friday to sunday).",
+      "impact": "26% of spend"
+    },
+    {
+      "title": "Mobile order and go: Convenience",
+      "body": "355 members, 11.2 visits a month at $8.63. Send 'Order-ahead perks and new-drink previews' via push notifications (lunch window).",
+      "impact": "21% of spend"
+    },
+    {
+      "title": "Deal seekers: Habit builder",
+      "body": "549 members, 2.5 visits a month at $7.01. Send 'Visit 3 times this week for 100 bonus stars' via app offers (monday mornings).",
+      "impact": "6% of spend"
+    },
+    {
+      "title": "Lapsed members: Win-back",
+      "body": "447 members, 1.0 visits a month at $5.92. Send 'Bonus stars on next visit within 14 days' via email + app push (day 30 and 45 after last visit).",
+      "impact": "2% of spend"
+    }
+  ]
+}
